@@ -1,3 +1,5 @@
+import { Scale } from "lucide-react";
+
 import Link from "next/link";
 import "@/app/globals.css";
 
@@ -29,13 +31,8 @@ export default function Home() {
                   </Link>
                 </div>
               </div>
-              <img
-                src="/placeholder.svg"
-                width="550"
-                height="550"
-                alt="Hero"
-                className="mx-auto aspect-video overflow-hidden rounded-xl object-cover sm:w-full lg:order-last lg:aspect-square"
-              />
+
+              <Scale size={"75%"} className="place-self-center" />
             </div>
           </div>
         </section>
