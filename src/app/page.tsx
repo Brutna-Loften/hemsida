@@ -1,11 +1,12 @@
 import { Scale } from "lucide-react";
-
 import Link from "next/link";
+
+import Navbar from "@/app/navbar";
 import "@/app/globals.css";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-[100dvh]">
+    <div className="flex flex-col">
       <main className="flex-1">
         <section className="w-full py-12 md:py-24 lg:py-32">
           <div className="container px-4 md:px-6">
