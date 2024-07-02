@@ -1,50 +1,55 @@
+"use client";
+
+import uFuzzy from "@leeoniya/ufuzzy";
+import { useEffect, useRef, useState } from "react";
+
 import "@/app/globals.css";
 import { Input } from "@/components/ui/input";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import promises from "@/data/promises.json";
+import { Data } from "@/data";
+import PromiseCard from "./promise-card";
 
 export default function Search() {
+  const state = useRef<{ fuzzy: uFuzzy; haystack: string[] }>();
+  const [input, setInput] = useState("");
+  const [result, setResult] = useState<number[]>();
+
+  useEffect(() => {
+    state.current = {
+      fuzzy: new uFuzzy(),
+      haystack: Data.promises.map(
+        (p) => `${p.name} ${p.description} ${p.party} ${p.tags} ${p.date}`,
+      ),
+    };
+  }, []);
+
+  useEffect(() => {
+    if (input.trim() === "") {
+      setResult(undefined);
+      return;
+    }
+
+    const [ids] = state.current!.fuzzy.search(state.current!.haystack, input);
+    setResult(ids ?? []);
+  }, [input]);
+
+  let list;
+  if (result == undefined) {
+    list = Data.promises.map((p) => <PromiseCard promise={p} />);
+  } else {
+    list = result.map((idx) => <PromiseCard promise={Data.promises[idx]} />);
+  }
+
   return (
     <>
       <div className="container pt-4 px-4 md:px-6">
-        <Input type="text" placeholder="Sök" className="mb-4" />
-
-        <div className="grid gap-4">
-          {promises.map((promise) => (
-            <Card className="p-4">
-              <CardHeader className="flex flex-row items-center justify-between">
-                <CardTitle>{promise.name}</CardTitle>
-                <div className="flex max-md:flex-col items-end">
-                  <div className="bg-muted/50 px-2 py-1 rounded-md md:mr-2 max-md:mb-2">
-                    Pågående
-                  </div>
-                  <div className="bg-muted/50 px-2 py-1 rounded-md">
-                    {promise.party}
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <span className="text-muted-foreground">
-                  {promise.description}
-                </span>
-              </CardContent>
-              <CardFooter>
-                {promise.tags.map((tag, index) => (
-                  <Badge key={index} variant="outline">
-                    {tag}
-                  </Badge>
-                ))}
-              </CardFooter>
-            </Card>
-          ))}
-        </div>
+        <Input
+          type="text"
+          placeholder="Sök"
+          className="mb-4"
+          value={input}
+          onChange={(ev) => setInput(ev.target.value)}
+        />
+        <div className="grid gap-4">{list}</div>
       </div>
     </>
   );
