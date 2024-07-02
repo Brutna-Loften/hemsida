@@ -5,7 +5,10 @@
     "party": "Kristdemokraterna",
     "date": "2024-06-28",
     "sources": [
-      "https://kristdemokraterna.se/arkiv/nyheter/2023/2024-06-28-ebba-buschs-tal-i-almedalen-28-juni-2024"
+      {
+        "value": "https://kristdemokraterna.se/arkiv/nyheter/2023/2024-06-28-ebba-buschs-tal-i-almedalen-28-juni-2024",
+        "archive": "https://web.archive.org/web/20240630072151/https://kristdemokraterna.se/arkiv/nyheter/2023/2024-06-28-ebba-buschs-tal-i-almedalen-28-juni-2024"
+      }
     ],
     "tags": ["Almedalen 2024"]
   },
@@ -15,7 +18,10 @@
     "party": "Kristdemokraterna",
     "date": "2024-06-28",
     "sources": [
-      "https://kristdemokraterna.se/arkiv/nyheter/2023/2024-06-28-ebba-buschs-tal-i-almedalen-28-juni-2024"
+      {
+        "value": "https://kristdemokraterna.se/arkiv/nyheter/2023/2024-06-28-ebba-buschs-tal-i-almedalen-28-juni-2024",
+        "archive": "https://web.archive.org/web/20240630072151/https://kristdemokraterna.se/arkiv/nyheter/2023/2024-06-28-ebba-buschs-tal-i-almedalen-28-juni-2024"
+      }
     ],
     "tags": ["Almedalen 2024"]
   },
@@ -25,7 +31,10 @@
     "party": "Kristdemokraterna",
     "date": "2024-06-28",
     "sources": [
-      "https://kristdemokraterna.se/arkiv/nyheter/2023/2024-06-28-ebba-buschs-tal-i-almedalen-28-juni-2024"
+      {
+        "value": "https://kristdemokraterna.se/arkiv/nyheter/2023/2024-06-28-ebba-buschs-tal-i-almedalen-28-juni-2024",
+        "archive": "https://web.archive.org/web/20240630072151/https://kristdemokraterna.se/arkiv/nyheter/2023/2024-06-28-ebba-buschs-tal-i-almedalen-28-juni-2024"
+      }
     ],
     "tags": ["Almedalen 2024"]
   },
@@ -35,7 +44,10 @@
     "party": "Kristdemokraterna",
     "date": "2024-06-28",
     "sources": [
-      "https://kristdemokraterna.se/arkiv/nyheter/2023/2024-06-28-ebba-buschs-tal-i-almedalen-28-juni-2024"
+      {
+        "value": "https://kristdemokraterna.se/arkiv/nyheter/2023/2024-06-28-ebba-buschs-tal-i-almedalen-28-juni-2024",
+        "archive": "https://web.archive.org/web/20240630072151/https://kristdemokraterna.se/arkiv/nyheter/2023/2024-06-28-ebba-buschs-tal-i-almedalen-28-juni-2024"
+      }
     ],
     "tags": ["Almedalen 2024"]
   }
