@@ -1,6 +1,12 @@
 import "@/app/globals.css";
 import { Input } from "@/components/ui/input";
-import { Card } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import promises from "@/data/promises.json";
 
@@ -12,23 +18,30 @@ export default function Search() {
 
         <div className="grid gap-4">
           {promises.map((promise) => (
-            <Card className="bg-background p-4 rounded-lg shadow-sm w-full">
-              <div className="flex items-center justify-between mb-2">
-                <div className="text-lg font-medium">{promise.name}</div>
-                <Badge variant="default" className="text-xs">
-                  Pågående
-                </Badge>
-              </div>
-              <div className="text-muted-foreground text-sm mb-2">
-                {promise.description}
-              </div>
-              <div className="flex flex-wrap gap-2 text-xs text-muted-foreground">
-                {promise.tags.map((tag, index) => (
-                  <div key={index} className="bg-muted/50 px-2 py-1 rounded-md">
-                    {tag}
+            <Card className="p-4">
+              <CardHeader className="flex flex-row items-center justify-between">
+                <CardTitle>{promise.name}</CardTitle>
+                <div className="flex max-md:flex-col items-end">
+                  <div className="bg-muted/50 px-2 py-1 rounded-md md:mr-2 max-md:mb-2">
+                    Pågående
                   </div>
+                  <div className="bg-muted/50 px-2 py-1 rounded-md">
+                    {promise.party}
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <span className="text-muted-foreground">
+                  {promise.description}
+                </span>
+              </CardContent>
+              <CardFooter>
+                {promise.tags.map((tag, index) => (
+                  <Badge key={index} variant="outline">
+                    {tag}
+                  </Badge>
                 ))}
-              </div>
+              </CardFooter>
             </Card>
           ))}
         </div>
