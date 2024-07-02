@@ -34,9 +34,11 @@ export default function Search() {
 
   let list;
   if (result == undefined) {
-    list = Data.promises.map((p) => <PromiseCard promise={p} />);
+    list = Data.promises.map((p, i) => <PromiseCard key={i} promise={p} />);
   } else {
-    list = result.map((idx) => <PromiseCard promise={Data.promises[idx]} />);
+    list = result.map((idx) => (
+      <PromiseCard key={idx} promise={Data.promises[idx]} />
+    ));
   }
 
   return (
