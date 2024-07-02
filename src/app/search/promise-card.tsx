@@ -16,12 +16,10 @@ export default function PromiseCard(props: { promise: Promise }) {
       <CardHeader className="flex flex-row items-center justify-between">
         <CardTitle>{promise.name}</CardTitle>
         <div className="flex max-md:flex-col items-end">
-          <div className="bg-muted/50 px-2 py-1 rounded-md md:mr-2 max-md:mb-2">
+          <div className="bg-muted px-2 py-1 rounded-md md:mr-2 max-md:mb-2">
             Pågående
           </div>
-          <div className="bg-muted/50 px-2 py-1 rounded-md">
-            {promise.party}
-          </div>
+          <div className="bg-muted px-2 py-1 rounded-md">{promise.party}</div>
         </div>
       </CardHeader>
       <CardContent>
