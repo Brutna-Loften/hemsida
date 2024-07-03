@@ -13,10 +13,10 @@ export default function PromiseCard(props: { promise: Promise }) {
 
   return (
     <Card className="p-4">
-      <CardHeader className="flex flex-row items-center justify-between">
-        <CardTitle>{promise.name}</CardTitle>
-        <div className="flex max-md:flex-col items-end">
-          <div className="bg-muted px-2 py-1 rounded-md md:mr-2 max-md:mb-2">
+      <CardHeader className="flex flex-col max-md:pb-2 md:items-center md:justify-between md:flex-row">
+        <CardTitle className="pb-2 md:pb-0">{promise.name}</CardTitle>
+        <div className="flex flex-col items-start md:flex-row md:items-end">
+          <div className="bg-muted px-2 py-1 mb-2 rounded-md md:mr-2 md:mb-0">
             Pågående
           </div>
           <div className="bg-muted px-2 py-1 rounded-md">{promise.party}</div>
