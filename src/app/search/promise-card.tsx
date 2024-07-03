@@ -12,7 +12,7 @@ export default function PromiseCard(props: { promise: Promise }) {
   const { promise } = props;
 
   return (
-    <Card className="p-4">
+    <Card className="p-4 mb-4">
       <CardHeader className="flex flex-col max-md:pb-2 md:items-center md:justify-between md:flex-row">
         <CardTitle className="pb-2 md:pb-0">{promise.name}</CardTitle>
         <div className="flex flex-col items-start md:flex-row md:items-end">

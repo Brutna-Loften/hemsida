@@ -51,7 +51,7 @@ export default function Search() {
           value={input}
           onChange={(ev) => setInput(ev.target.value)}
         />
-        <div className="grid gap-4">{list}</div>
+        <div>{list}</div>
       </div>
     </>
   );
